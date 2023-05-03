@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hydra\n"
+"POT-Creation-Date: 2023-05-25 19:00+0200\n"
+"PO-Revision-Date: 2023-05-25 19:03+0200\n"
+"Last-Translator: dream-alpha\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-Basepath: ../../Hydra\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "License"
+msgstr "Lizenz"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Server config file path:"
+msgstr "Pfad der Serverkonfigurationsdatei:"
+
+msgid "Start server when DreamOS starts:"
+msgstr "Server starten, wenn DreamOS startet:"
+
+msgid "Poster path:"
+msgstr "Posterpfad:"
+
+msgid "Search engine:"
+msgstr "Suchmaschine:"
+
+msgid "Remember last search:"
+msgstr "Erinnern Sie sich an die letzte Suche:"
+
+msgid "Start VPN when plugin starts:"
+msgstr "Starte VPN, wenn das Plugin startet:"
+
+msgid "Stop VPN when plugin exits:"
+msgstr "Stoppe VPN, wenn sich das Plugin beendet:"
+
+msgid "Choose Directory"
+msgstr "Wähle Verzeichnis"
+
+msgid "Installing Server..."
+msgstr "Server wird installiert..."
+
+msgid "Server installed/updated"
+msgstr "Server wurde installiert/aktualisiert"
+
+msgid "Server installation/update failed."
+msgstr "Server Installation/Aktualisierung gescheitert."
+
+msgid "No update found for TorrServer"
+msgstr "Update für TorrServer wurde nicht gefunden"
+
+msgid "Update server"
+msgstr "Aktualisiere Server"
+
+msgid "Episodes"
+msgstr "Episoden"
+
+msgid "None"
+msgstr "Keine"
+
+msgid "Exit"
+msgstr "Beenden"
+
+msgid "Play"
+msgstr "Abspielen"
+
+msgid "Preload buffer"
+msgstr "Buffer laden"
+
+msgid "Reset progress"
+msgstr "Fortschritt löschen"
+
+msgid "Loading..."
+msgstr "Laden..."
+
+msgid "Preloading buffer..."
+msgstr "Buffer laden..."
+
+msgid "Overview"
+msgstr "Überblick"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Search torrent"
+msgstr "Torrent-Suche"
+
+msgid "Update torrent"
+msgstr "Torrent-Update"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Enter torrent to search"
+msgstr "Suche für Torrent eingeben"
+
+msgid "Do you really want to delete this torrent?"
+msgstr "Willst du diesen Torrent wirklich löschen?"
+
+msgid "Rating"
+msgstr "Wertung"
+
+msgid "Votes"
+msgstr "Stimmen"
+
+msgid "Resume playback from previous position?"
+msgstr "Wiedergabe an letzter Position fortsetzen?"
+
+msgid "Add torrent"
+msgstr "Torrent-Download"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid ">> Search engine"
+msgstr ">> Suchmaschine"
+
+msgid "Searching..."
+msgstr "Suche..."
+
+msgid "not installed"
+msgstr "nicht installiert"
+
+msgid "Install server"
+msgstr "Installiere Server"
+
+msgid "Stop"
+msgstr "Stopp"
+
+msgid "down"
+msgstr "nicht einsatzbereit"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "B"
+msgstr "B"
+
+msgid "KB"
+msgstr "KB"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "%0.2f %s"
+msgstr "%0.2f %s"
+
+msgid "Search movie"
+msgstr "Filmsuche"
+
+msgid "Hydra Player"
+msgstr "Hydra Player"

@@ -1,0 +1,360 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hydra\n"
+"POT-Creation-Date: 2023-02-28 11:20+0100\n"
+"PO-Revision-Date: 2023-02-28 11:21+0100\n"
+"Last-Translator: dream-alpha\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "%0.2f %s"
+msgstr "%0.2f %s"
+
+msgid ">> Search engine"
+msgstr ">> Сменить движок"
+
+msgid "Add torrent"
+msgstr "Добавить торрент"
+
+msgid "Add torrent to playlist and play"
+msgstr "Добавить торрент в плейлист и воспроизвести"
+
+msgid "Ask user"
+msgstr "Спросить пользователя"
+
+msgid "Autostart"
+msgstr "Автостарт"
+
+msgid "B"
+msgstr "Б"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Check updates"
+msgstr "Проверить обновления"
+
+msgid "Choose Directory"
+msgstr "Выбор каталога"
+
+msgid "Config file path:"
+msgstr "Расположение файла конфига:"
+
+msgid "Configuration file is not available."
+msgstr "Файл конфигурации недоступен."
+
+msgid "Copyright"
+msgstr "Авторские права"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Do you really want to delete this torrent?"
+msgstr "Вы действительно хотите удалить этот торрент?"
+
+msgid ""
+"Do you want to delete  this torrent?\n"
+"\n"
+"%s"
+msgstr ""
+"Вы хотите удалить этот торрент?\n"
+"\n"
+"%s"
+
+msgid ""
+"Do you want to delete this torrent?\n"
+"\n"
+"%s"
+msgstr ""
+"Вы хотите удалить этот торрент?\n"
+"\n"
+"%s"
+
+msgid "Enigma2 TorrePlayer  ver. %s"
+msgstr "Enigma2 TorrePlayer вер. %s"
+
+msgid "Enter torrent to search"
+msgstr "Введите торрент для поиска"
+
+msgid "Episodes"
+msgstr "Эпизоды"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "Exit torrent player?"
+msgstr "Выйти из торрент плеера?"
+
+msgid "GB"
+msgstr "Гб"
+
+msgid "Hydra (c) 2023"
+msgstr "Гидра плеер (c) 2023"
+
+msgid "Hydra - %s"
+msgstr "Гидра плеер - %s"
+
+msgid "Hydra Player"
+msgstr "Гидра Плеер"
+
+msgid "Hydra Player Plugin"
+msgstr "Гидра Плеер"
+
+msgid "Hydra Settings"
+msgstr "Настройки"
+
+msgid "HydraPlayer"
+msgstr "Гидра Плеер"
+
+msgid "Install"
+msgstr "Установить"
+
+msgid "Install Server"
+msgstr "Установить сервер"
+
+msgid "Installing Server..."
+msgstr "Установка сервера..."
+
+msgid "KB"
+msgstr "Кб"
+
+msgid "License"
+msgstr "Лицензия"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "MB"
+msgstr "Мб"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No results found."
+msgstr "Результаты не найдены."
+
+msgid "No results were found for \"%s\""
+msgstr "По запросу \"%s\" ничего не найдено"
+
+msgid "No search engine configured."
+msgstr "Поисковая система не настроена."
+
+msgid "No update found TorrServer"
+msgstr "Обновлений для Гидра сервер не найдено"
+
+msgid "No update found for TorrServer"
+msgstr "Нет обновлений для TorrServer"
+
+msgid "No version TorrServer!"
+msgstr "Нет версий Гидра сервер!"
+
+msgid "No, but play video again"
+msgstr "Нет, но проиграть это видео еще раз"
+
+msgid "Nothing to delete."
+msgstr "Нечего удалить"
+
+msgid "Nothing to preload."
+msgstr "Нечего предварительно загружать."
+
+msgid "Only add torrent to playlist"
+msgstr "Добавить только торрент в плейлист"
+
+msgid "Only play torrent"
+msgstr "Воспроизвести только торрент"
+
+msgid "Overview"
+msgstr "Краткий обзор"
+
+msgid "Play"
+msgstr "Воспроизвести"
+
+msgid "Play next"
+msgstr "Воспроизвести следующее"
+
+msgid "Play next video"
+msgstr "Воспроизвести следующее видео"
+
+msgid "Play video again"
+msgstr "Воспроизвести видео снова"
+
+msgid "Player torrent"
+msgstr "Торрент плеер"
+
+msgid "Plugin"
+msgstr "Плагин"
+
+msgid "Poster path:"
+msgstr "Расположение постеров:"
+
+msgid "Preload buffer"
+msgstr "Предзагрузка буфера"
+
+msgid "Quit"
+msgstr "Выйти"
+
+msgid "Rating"
+msgstr "Рейтинг"
+
+msgid "Remember last search"
+msgstr "Запоминать последний поиск"
+
+msgid "Remember last search:"
+msgstr "Запомнить последний поиск:"
+
+msgid "Remove view states"
+msgstr "Очистить просмотры"
+
+msgid "Repeat"
+msgstr "Повтор"
+
+msgid "Reset progress"
+msgstr "Смотреть сначала"
+
+msgid "Resume playback from previous position?"
+msgstr "Возобновить воспроизведение с предыдущей позиции?"
+
+msgid "Resume playback from the previous position?"
+msgstr "Возобновить просмотр с предыдущей позиции?"
+
+msgid "Return to list"
+msgstr "Вернуться к списку"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search engine:"
+msgstr "Поисковый движок:"
+
+msgid "Search result <  %s  >"
+msgstr "Результаты поиска  <  %s  >"
+
+msgid "Search torrent"
+msgstr "Поиск торрента"
+
+msgid "Searching"
+msgstr "Идет поиск"
+
+msgid "Searching..."
+msgstr "Идет поиск..."
+
+msgid "Server & Port:"
+msgstr "Сервер и порт:"
+
+msgid "Server autostart when DreamOS starts:"
+msgstr "Автозапуск сервера при запуске DreamOS:"
+
+msgid "Server config file path:"
+msgstr "Путь к файлу конфигурации сервера:"
+
+msgid "Server installation/update failed."
+msgstr "Не удалось установить/обновить сервер."
+
+msgid "Server installed/updated"
+msgstr "Сервер установлен/обновлен"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Settings TorrePlayer"
+msgstr "Настройки Гидра Плеера"
+
+msgid "Start"
+msgstr "Запуск"
+
+msgid "Start VPN when plugin starts:"
+msgstr "Запускать VPN при запуске плагина:"
+
+msgid "Start server when DreamOS starts:"
+msgstr "Запустить сервер при запуске DreamOS:"
+
+msgid "Stop"
+msgstr "Стоп"
+
+msgid "Stop VPN when plugin exits:"
+msgstr "Остановить VPN при выходе из плагина:"
+
+msgid "Stop playing this movie?"
+msgstr "Остановить воспроизведение?"
+
+msgid "TorrServer is installed :)"
+msgstr "Гидра сервер установлен :)"
+
+msgid "TorrServer is installed/updated"
+msgstr "TorrServer установлен/обновлен"
+
+msgid "TorrServer not installed :("
+msgstr "Гидра сервер не установлен :("
+
+msgid "TorrServer try install :)"
+msgstr "Попытка установить Гидра сервер :)"
+
+msgid "TorrServer try update :)"
+msgstr "Попытка обновить Гидра сервер :)"
+
+msgid "TorrServer:  "
+msgstr "Гидра сервер:  "
+
+msgid "Trying to install TorrServer..."
+msgstr "Попытка установить TorrServer..."
+
+msgid "Trying to update TorrServer..."
+msgstr "Попытка обновить Terraserver..."
+
+msgid "Update Server"
+msgstr "Обновить сервер"
+
+msgid "Update server"
+msgstr "Обновление сервера"
+
+msgid "Update torrent"
+msgstr "Обновить торрент"
+
+msgid "Update torrent info"
+msgstr "Обновить инфо о торренте"
+
+msgid "User Rating"
+msgstr "Рейтинг"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Votes"
+msgstr "Голосов"
+
+msgid "What do you want to do?"
+msgstr "Что вы хотите сделать?"
+
+msgid "When playback stop:"
+msgstr "При остановке просмотра:"
+
+msgid "When video ends:"
+msgstr "Когда видео закончилось:"
+
+msgid "Yes, and return to list"
+msgstr "Да, и вернуться к списку"
+
+msgid "Yes, but play next video"
+msgstr "Да, но проиграть следующее видео"
+
+msgid "down"
+msgstr "стоп"
+
+msgid "down :("
+msgstr "не запущен :("
+
+msgid "not installed"
+msgstr "не установлен"

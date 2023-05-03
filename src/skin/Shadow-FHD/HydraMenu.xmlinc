@@ -1,0 +1,20 @@
+	<screen name="HydraMenu" position="center,110" size="1796,928">
+		<widget alphatest="blend" name="pic_loading" position="center,center" size="100,100" zPosition="3"/>
+		<widget font="Regular;40" halign="center" name="int_loading" position="center,center" size="80,80" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;40" halign="center" name="msg_loading" position="center,509" size="1796,80" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;40" foregroundColor="#FFF554" halign="center" name="title" position="30,15" size="1736,45" transparent="1"/>
+		<widget font="Regular;27" foregroundColor="white" name="vote_average" position="299,569" size="499,36" transparent="1" valign="center"/>
+		<widget alphatest="blend" name="poster" position="30,90" size="299,449" zPosition="2"/>
+		<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_empty.png" position="30,572" size="209,21" transparent="1" zPosition="2"/>
+		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_filled.png" position="30,572" size="209,21" transparent="1" zPosition="3"/>
+		<widget font="Regular;26" foregroundColor="#1AB6CD" name="overview" position="30,617" size="1736,209" transparent="1" valign="center"/>
+		<widget position="359,90" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="7" size="1406,449" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [MultiContentEntryText(pos=(5,6), size=(1197,45), font=0, flags=RT_HALIGN_LEFT, text=0), MultiContentEntryText(pos=(1187,9), size=(200,40), font=1, flags=RT_HALIGN_RIGHT, text=2)], "fonts": [gFont("Regular",30), gFont("Regular",25)], "itemHeight":50}</convert>
+		</widget>
+		<widget font="Regular;30" foregroundColor="#36B88C" halign="right" name="statusbar" position="1327,566" size="439,42" transparent="1" valign="center"/>
+		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_menu.png" position="1297,838" size="100,70" zPosition="1"/>
+		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_info.png" position="1417,838" size="100,70" zPosition="1"/>
+		<widget alphatest="on" name="vpn" position="1716,858" size="50,50" zPosition="1"/>
+		<xmlinc file="ColorButtons" position="20,838"/>
+		<xmlinc file="ColorButtonsLabels" position="20,838"/>
+	</screen>

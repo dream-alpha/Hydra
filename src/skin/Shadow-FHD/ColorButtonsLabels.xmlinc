@@ -1,0 +1,4 @@
+	<widget backgroundColor="#9f1313" font="Regular;30" foregroundColor="white" halign="center" name="key_red" position="0,0" shadowColor="black" shadowOffset="-2,-2" size="299,70" transparent="1" valign="center" zPosition="1"/>
+	<widget backgroundColor="#1f771f" font="Regular;30" foregroundColor="white" halign="center" name="key_green" position="299,0" shadowColor="black" shadowOffset="-2,-2" size="299,70" transparent="1" valign="center" zPosition="1"/>
+	<widget backgroundColor="#a08500" font="Regular;30" foregroundColor="white" halign="center" name="key_yellow" position="599,0" shadowColor="black" shadowOffset="-2,-2" size="299,70" transparent="1" valign="center" zPosition="1"/>
+	<widget backgroundColor="#18188b" font="Regular;30" foregroundColor="white" halign="center" name="key_blue" position="898,0" shadowColor="black" shadowOffset="-2,-2" size="299,70" transparent="1" valign="center" zPosition="1"/>

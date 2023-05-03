@@ -1,0 +1,4 @@
+	<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="0,0" size="399,93"/>
+	<ePixmap pixmap="Default-FHD/skin_default/buttons/green.svg" position="399,0" size="399,93"/>
+	<ePixmap pixmap="Default-FHD/skin_default/buttons/yellow.svg" position="798,0" size="399,93"/>
+	<ePixmap pixmap="Default-FHD/skin_default/buttons/blue.svg" position="1197,0" size="399,93"/>

@@ -1,0 +1,23 @@
+	<screen name="HydraSearch" position="center,center" size="1240,725">
+		<xmlinc file="Loading"/>
+		<widget position="20,10" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="7" size="1200,630" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">
+		{
+			"template": [
+				MultiContentEntryText(pos=(10, 10), size=(1180, 40), font=0, flags=RT_HALIGN_LEFT | RT_WRAP, text=0),
+				MultiContentEntryText(pos=(90, 50), size=(265, 30), font=1, flags=RT_HALIGN_LEFT, text=2),
+				MultiContentEntryText(pos=(355, 50), size=(265, 30), font=1, flags=RT_HALIGN_CENTER, text=3),
+				MultiContentEntryText(pos=(640, 50), size=(265, 30), font=1, flags=RT_HALIGN_RIGHT, text=4),
+				MultiContentEntryText(pos=(915, 50), size=(265, 30), font=1, flags=RT_HALIGN_RIGHT, text=5),
+			],
+			"fonts": [
+				gFont("Regular", 30),
+				gFont("Regular", 25)
+			],
+			"itemHeight": 90
+		}
+		</convert>
+		</widget>
+		<xmlinc file="ColorButtons" position="20,640"/>
+		<xmlinc file="ColorButtonsLabels" position="20,640"/>
+	</screen>

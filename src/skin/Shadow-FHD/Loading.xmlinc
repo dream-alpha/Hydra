@@ -1,0 +1,3 @@
+	<widget alphatest="blend" name="pic_loading" position="center,center" size="100,100" zPosition="3"/>
+	<widget font="Regular;40" halign="center" name="int_loading" position="center,center" size="80,80" transparent="1" valign="center" zPosition="4"/>
+	<widget font="Regular;40" halign="center" name="msg_loading" position="center,409" size="1197,80" transparent="1" valign="center" zPosition="4"/>

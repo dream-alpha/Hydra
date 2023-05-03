@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<skin>
+	<screen name="HydraMenu" position="center,146" size="2394,1237">
+		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
+		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="106,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,678" size="2394,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" foregroundColor="#FFF554" halign="center" name="title" position="40,20" size="2314,60" transparent="1"/>
+		<widget font="Regular;36" foregroundColor="white" name="vote_average" position="399,758" size="665,48" transparent="1" valign="center"/>
+		<widget alphatest="blend" name="poster" position="40,120" size="399,599" zPosition="2"/>
+		<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_empty.png" position="40,763" size="279,28" transparent="1" zPosition="2"/>
+		<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_filled.png" position="40,763" size="279,28" transparent="1" zPosition="3"/>
+		<widget font="Regular;35" foregroundColor="#1AB6CD" name="overview" position="40,822" size="2314,279" transparent="1" valign="center"/>
+		<widget position="479,120" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1875,599" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [MultiContentEntryText(pos=(7,8), size=(1596,60), font=0, flags=RT_HALIGN_LEFT, text=0), MultiContentEntryText(pos=(1583,12), size=(266,53), font=1, flags=RT_HALIGN_RIGHT, text=2)], "fonts": [gFont("Regular",40), gFont("Regular",33)], "itemHeight":67}</convert>
+		</widget>
+		<widget font="Regular;40" foregroundColor="#36B88C" halign="right" name="statusbar" position="1769,754" size="585,56" transparent="1" valign="center"/>
+		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_menu.png" position="1729,1117" size="133,93" zPosition="1"/>
+		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_info.png" position="1889,1117" size="133,93" zPosition="1"/>
+		<widget alphatest="on" name="vpn" position="2288,1144" size="67,67" zPosition="1"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="27,1117" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/green.svg" position="426,1117" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/yellow.svg" position="825,1117" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/blue.svg" position="1224,1117" size="399,93"/>
+		<widget backgroundColor="#9f1313" font="Regular;40" foregroundColor="white" halign="center" name="key_red" position="27,1117" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#1f771f" font="Regular;40" foregroundColor="white" halign="center" name="key_green" position="426,1117" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#a08500" font="Regular;40" foregroundColor="white" halign="center" name="key_yellow" position="825,1117" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#18188b" font="Regular;40" foregroundColor="white" halign="center" name="key_blue" position="1224,1117" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+	</screen>
+	<screen name="HydraConfig" position="center,center" size="1649,964">
+		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
+		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="106,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,545" size="1596,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;40" foregroundColor="#4f7942" halign="left" name="statusbar" position="27,625" size="1596,40" transparent="1"/>
+		<widget name="config" position="27,27" scrollbarMode="showOnDemand" size="1596,665" transparent="1"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="27,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/green.svg" position="426,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/yellow.svg" position="825,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/blue.svg" position="1224,851" size="399,93"/>
+		<widget backgroundColor="#9f1313" font="Regular;40" foregroundColor="white" halign="center" name="key_red" position="27,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#1f771f" font="Regular;40" foregroundColor="white" halign="center" name="key_green" position="426,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#a08500" font="Regular;40" foregroundColor="white" halign="center" name="key_yellow" position="825,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#18188b" font="Regular;40" foregroundColor="white" halign="center" name="key_blue" position="1224,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+	</screen>
+	<screen name="HydraEpisodes" position="center,center" size="1649,964">
+		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
+		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="106,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,545" size="1596,106" transparent="1" valign="center" zPosition="4"/>
+		<widget position="27,33" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1596,798" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [MultiContentEntryText(pos=(13,0), size=(93,60), font=1, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=4), MultiContentEntryText(pos=(120,0), size=(1317,60), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=0), MultiContentEntryText(pos=(1436,0), size=(133,60), font=1, flags=RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text=2), ], "fonts": [gFont("Regular",40), gFont("Regular",33)], "itemHeight":60}</convert>
+		</widget>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="27,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/green.svg" position="426,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/yellow.svg" position="825,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/blue.svg" position="1224,851" size="399,93"/>
+		<widget backgroundColor="#9f1313" font="Regular;40" foregroundColor="white" halign="center" name="key_red" position="27,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#1f771f" font="Regular;40" foregroundColor="white" halign="center" name="key_green" position="426,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#a08500" font="Regular;40" foregroundColor="white" halign="center" name="key_yellow" position="825,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#18188b" font="Regular;40" foregroundColor="white" halign="center" name="key_blue" position="1224,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+	</screen>
+	<screen name="HydraSearch" position="center,center" size="1649,964">
+		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
+		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="106,106" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,545" size="1596,106" transparent="1" valign="center" zPosition="4"/>
+		<widget position="27,13" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1596,838" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [MultiContentEntryText(pos=(13,13), size=(1569,53), font=0, flags=RT_HALIGN_LEFT|RT_WRAP, text=0), MultiContentEntryText(pos=(120,67), size=(352,40), font=1, flags=RT_HALIGN_LEFT, text=2), MultiContentEntryText(pos=(472,67), size=(352,40), font=1, flags=RT_HALIGN_CENTER, text=3), MultiContentEntryText(pos=(851,67), size=(352,40), font=1, flags=RT_HALIGN_RIGHT, text=4), MultiContentEntryText(pos=(1217,67), size=(352,40), font=1, flags=RT_HALIGN_RIGHT, text=5), ], "fonts": [gFont("Regular",40), gFont("Regular",33)], "itemHeight":120}</convert>
+		</widget>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="27,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/green.svg" position="426,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/yellow.svg" position="825,851" size="399,93"/>
+		<ePixmap pixmap="Default-FHD/skin_default/buttons/blue.svg" position="1224,851" size="399,93"/>
+		<widget backgroundColor="#9f1313" font="Regular;40" foregroundColor="white" halign="center" name="key_red" position="27,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#1f771f" font="Regular;40" foregroundColor="white" halign="center" name="key_green" position="426,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#a08500" font="Regular;40" foregroundColor="white" halign="center" name="key_yellow" position="825,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+		<widget backgroundColor="#18188b" font="Regular;40" foregroundColor="white" halign="center" name="key_blue" position="1224,851" shadowColor="black" shadowOffset="-2,-2" size="399,93" transparent="1" valign="center" zPosition="1"/>
+	</screen>
+</skin>
