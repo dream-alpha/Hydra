@@ -1,5 +1,5 @@
 	<screen name="HydraSearch" position="center,center" size="1240,725">
-		<xmlinc file="Loading"/>
+		<xmlinc file="screenpart_Loading"/>
 		<widget position="20,10" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="7" size="1200,630" source="menu" transparent="1">
 			<convert type="TemplatedMultiContent">
 		{
@@ -18,6 +18,6 @@
 		}
 		</convert>
 		</widget>
-		<xmlinc file="ColorButtons" position="20,640"/>
-		<xmlinc file="ColorButtonsLabels" position="20,640"/>
+		<xmlinc file="screenpart_ColorButtons" position="20,640" width="300"/>
+		<xmlinc file="screenpart_ColorButtonsLabels" position="20,640" width="300"/>
 	</screen>

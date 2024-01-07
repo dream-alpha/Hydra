@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<skin>
+	<xmlinc file="screen_HydraMenu"/>
+	<xmlinc file="screen_HydraConfig"/>
+	<xmlinc file="screen_HydraEpisodes"/>
+	<xmlinc file="screen_HydraSearch"/>
+</skin>

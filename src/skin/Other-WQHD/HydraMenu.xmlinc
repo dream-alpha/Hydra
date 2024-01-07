@@ -15,6 +15,6 @@
 		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_menu.png" position="1733,1120" size="133,93" zPosition="1"/>
 		<ePixmap alphatest="on" pixmap="/usr/share/enigma2/skin_default/buttons/key_info.png" position="1893,1120" size="133,93" zPosition="1"/>
 		<widget alphatest="on" name="vpn" position="2293,1147" size="67,67" zPosition="1"/>
-		<xmlinc file="ColorButtons" position="27,1120"/>
-		<xmlinc file="ColorButtonsLabels" position="27,1120"/>
+		<xmlinc file="screenpart_ColorButtons" position="27,1120"/>
+		<xmlinc file="screenpart_ColorButtonsLabels" position="27,1120"/>
 	</screen>

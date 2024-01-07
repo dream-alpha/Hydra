@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 #
-# Copyright (C) 2018-2023 by dream-alpha
+# Copyright (C) 2018-2024 by dream-alpha
 #
 # In case of reuse of this source code please do not remove this copyright.
 #
@@ -22,6 +22,7 @@
 import os
 from Components.config import config, ConfigOnOff, ConfigText, ConfigSelection, ConfigYesNo, ConfigDirectory, ConfigSubsection, ConfigLocations
 from .Debug import logger, log_levels
+from . import _
 
 
 medialist = [n.split()[1] for n in open('/proc/mounts', 'r').readlines() if any(x in n for x in ('vfat', 'ext4', 'ext3', 'ext2', 'fat32', 'fat16', 'ntfs', 'fuseblk')) and 'media' in n]
@@ -53,13 +54,14 @@ class ConfigInit():
 	def __init__(self):
 		logger.info("...")
 		config.plugins.hydra = ConfigSubsection()
-		config.plugins.hydra.debug_log_level = ConfigSelection(default="DEBUG", choices=log_levels.keys())
+		config.plugins.hydra.debug_log_level = ConfigSelection(default="DEBUG", choices=list(log_levels.keys()))
 		config.plugins.hydra.autostart = ConfigOnOff(default=False)
-		config.plugins.hydra.remember_last_search = ConfigYesNo()
+		config.plugins.hydra.use_last_search = ConfigYesNo()
 		config.plugins.hydra.last_search = ConfigText(default="Bond")
 		config.plugins.hydra.last_positions = ConfigText(default="{}")
 		config.plugins.hydra.config_path = ConfigDirectory("/etc/enigma2")
 		config.plugins.hydra.config_bookmarks = ConfigLocations(default=medialist + ["/data"])
+		config.plugins.hydra.player = ConfigSelection(default='4097', choices=[("4097", _("Default"))])
 		config.plugins.hydra.poster_path = ConfigDirectory("/tmp")
 		config.plugins.hydra.poster_bookmarks = ConfigLocations(default=medialist + ["/tmp"])
 		config.plugins.hydra.search_engine = ConfigSelection(default="demo", choices=search_engines)

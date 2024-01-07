@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 #
-# Copyright (C) 2018-2023 by dream-alpha
+# Copyright (C) 2018-2024 by dream-alpha
 #
 # In case of reuse of this source code please do not remove this copyright.
 #
@@ -84,7 +84,7 @@ class HydraConfig(ConfigListScreen, Screen):
 		self.poster_path = getConfigListEntry(_("Poster path:"), config.plugins.hydra.poster_path)
 		self.list.append(self.poster_path)
 		self.list.append(getConfigListEntry(_("Search engine:"), config.plugins.hydra.search_engine))
-		self.list.append(getConfigListEntry(_("Remember last search:"), config.plugins.hydra.remember_last_search))
+		self.list.append(getConfigListEntry(_("Use last search:"), config.plugins.hydra.use_last_search))
 		self.list.append(getConfigListEntry(_("Start VPN when plugin starts:"), config.plugins.hydra.vpn_start))
 		self.list.append(getConfigListEntry(_("Stop VPN when plugin exits:"), config.plugins.hydra.vpn_stop))
 		self['config'].setList(self.list)

@@ -1,8 +1,8 @@
 	<screen name="HydraSearch" position="center,center" size="1649,964">
-		<xmlinc file="Loading"/>
-		<widget position="27,13" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1596,838" source="menu" transparent="1">
-			<convert type="TemplatedMultiContent">{"template": [MultiContentEntryText(pos=(13,13), size=(1569,53), font=0, flags=RT_HALIGN_LEFT|RT_WRAP, text=0), MultiContentEntryText(pos=(120,67), size=(352,40), font=1, flags=RT_HALIGN_LEFT, text=2), MultiContentEntryText(pos=(472,67), size=(352,40), font=1, flags=RT_HALIGN_CENTER, text=3), MultiContentEntryText(pos=(851,67), size=(352,40), font=1, flags=RT_HALIGN_RIGHT, text=4), MultiContentEntryText(pos=(1217,67), size=(352,40), font=1, flags=RT_HALIGN_RIGHT, text=5), ], "fonts": [gFont("Regular",40), gFont("Regular",33)], "itemHeight":120}</convert>
+		<xmlinc file="screenpart_Loading"/>
+		<widget position="27,13" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1596,839" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template":[MultiContentEntryText(pos=(13,13),size=(1569,53),font=0,flags=RT_HALIGN_LEFT|RT_WRAP,text=0),MultiContentEntryText(pos=(120,67),size=(352,40),font=1,flags=RT_HALIGN_LEFT,text=2),MultiContentEntryText(pos=(472,67),size=(352,40),font=1,flags=RT_HALIGN_CENTER,text=3),MultiContentEntryText(pos=(851,67),size=(352,40),font=1,flags=RT_HALIGN_RIGHT,text=4),MultiContentEntryText(pos=(1217,67),size=(352,40),font=1,flags=RT_HALIGN_RIGHT,text=5),],"fonts":[gFont("Regular",40),gFont("Regular",33)],"itemHeight":120}</convert>
 		</widget>
-		<xmlinc file="ColorButtons" position="27,851"/>
-		<xmlinc file="ColorButtonsLabels" position="27,851"/>
+		<xmlinc file="screenpart_ColorButtons" position="27,851"/>
+		<xmlinc file="screenpart_ColorButtonsLabels" position="27,851"/>
 	</screen>

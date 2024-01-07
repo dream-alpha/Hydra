@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 #
-# Copyright (C) 2018-2023 by dream-alpha
+# Copyright (C) 2018-2024 by dream-alpha
 #
 # In case of reuse of this source code please do not remove this copyright.
 #
@@ -21,9 +21,9 @@
 
 import os
 from twisted.internet import threads, reactor
-from enigma import eTimer
+from enigma import eTimer, gPixmapPtr
 from Components.ActionMap import ActionMap
-from Components.config import config, ConfigSelection
+from Components.config import config
 from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
@@ -81,7 +81,6 @@ class HydraMenu(Screen):
 		self.trnt = None
 		self.menu_list = []
 		self["menu"] = self.menu = List(self.menu_list, enableWrapAround=True)
-		config.plugins.hydra.player = ConfigSelection(default='4097', choices=[("4097", _("Default"))])
 		self.current_index = 0
 		self.status_timer = eTimer()
 		self.status_timer_conn = self.status_timer.timeout.connect(self.getStatus)
@@ -146,8 +145,7 @@ class HydraMenu(Screen):
 		logger.info("...")
 		if self.dt_show_tmdb_infos:
 			self.dt_show_tmdb_infos.stop()
-		if self.menu.getCurrent():
-			self.dt_show_tmdb_infos = DelayTimer(300, self.showTMDBInfos)
+		self.dt_show_tmdb_infos = DelayTimer(300, self.showTMDBInfos)
 
 	def showTMDBInfos(self):
 		current = self.menu.getCurrent()
@@ -158,6 +156,11 @@ class HydraMenu(Screen):
 			self["overview"].setText(str(current[4]))
 			self.showVote(current[5], current[6])
 			self["title"].setText(str(current[7]))
+		else:
+			self["poster"].instance.setPixmap(gPixmapPtr())
+			self.hideVote()
+			self["overview"].setText("")
+			self["title"].setText("")
 
 	def getStatus(self):
 		# logger.info("status: %s", getStatus()[0])
@@ -190,6 +193,7 @@ class HydraMenu(Screen):
 		logger.debug("current_index: %s", self.current_index)
 		self["menu"].setList(self.menu_list)
 		self.menu.setIndex(self.current_index)
+		self.showTMDBInfos()
 
 	def cancel(self):
 		if self.dt_show_tmdb_infos:
@@ -202,21 +206,19 @@ class HydraMenu(Screen):
 
 	def openVirtualKeyBoard(self):
 		text = ""
-		if config.plugins.hydra.remember_last_search.value:
-			text = config.plugins.hydra.last_search.value
+		current = self.menu.getCurrent()
+		logger.info("current: %s", current)
+		if current and not config.plugins.hydra.use_last_search.value:
+			text = str(current[7])
 		else:
-			current = self.menu.getCurrent()
-			logger.info("current: %s", current)
-			if current:
-				text = str(current[7])
+			text = config.plugins.hydra.last_search.value
 		self.session.openWithCallback(self.searchTorrent, VirtualKeyBoard, title=_("Enter torrent to search"), text=text)
 
 	def searchTorrent(self, search):
 		logger.info("search: %s", search)
 		if search:
-			if config.plugins.hydra.remember_last_search.value:
-				config.plugins.hydra.last_search.value = search
-				config.plugins.hydra.last_search.save()
+			config.plugins.hydra.last_search.value = search
+			config.plugins.hydra.last_search.save()
 			self.session.openWithCallback(self.searchCallback, HydraSearch, search_topic=search)
 
 	def searchCallback(self, title=None, magnet=None):
@@ -253,7 +255,7 @@ class HydraMenu(Screen):
 			self.trnt.data.vote_count = res["vote_count"]
 			self.trnt.data.title = res["title"]
 			self.torrclient.update_torrent(self.trnt)
-			self.createList()
+		self.createList()
 
 	def deleteMovie(self):
 		if self["menu"].getCurrent():
@@ -293,6 +295,11 @@ class HydraMenu(Screen):
 		self["starsbg"].show()
 		self["stars"].setValue(self.ratingstars)
 		self["stars"].show()
+
+	def hideVote(self):
+		self["vote_average"].setText("")
+		self["starsbg"].hide()
+		self["stars"].hide()
 
 	def showPoster(self, url):
 		if not url:
