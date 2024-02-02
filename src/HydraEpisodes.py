@@ -24,7 +24,6 @@ from enigma import eServiceReference
 from Components.ActionMap import ActionMap
 from Components.config import config
 from Components.Label import Label
-from Components.Pixmap import Pixmap
 from Components.Sources.List import List
 from Screens.Screen import Screen
 from .torr.torrclient import torrclient
@@ -44,13 +43,10 @@ class HydraEpisodes(Screen):
 		self.last_positions_instance = LastPositions.getInstance()
 		self.torrclient = torrclient.getInstance()
 		self.torrent = self.torrclient.srv_torrents[ahash]
-		title = str(self.torrent.title)
+		title = str(self.torrent.data.title)
 		logger.debug("title: %s", title)
 		self.setTitle("%s - %s - %s" % ("Hydra", _("Episodes"), title if title else _("None")))
-		self["pic_loading"] = Pixmap()
-		self["int_loading"] = Label()
-		self["msg_loading"] = Label()
-		self.loading = Loading(self["pic_loading"], self["int_loading"], self["msg_loading"], None)
+		self.loading = Loading(self, None)
 		self["key_red"] = Label(_("Exit"))
 		self["key_green"] = Label(_("Play"))
 		self["key_yellow"] = Label(_("Preload buffer"))
@@ -76,7 +72,7 @@ class HydraEpisodes(Screen):
 
 	def __onLayoutFinish(self):
 		self.menu_list = []
-		self.menu_list.append(("", "", "", "", "", ""))
+		# self.menu_list.append(("", "", "", "", "", ""))
 		self["menu"].setList(self.menu_list)
 		self.loading.start(-1, _("Loading..."))
 		self.thread = threads.deferToThread(self.torrclient.get_torrent, self.torrent, self.createList)
@@ -130,7 +126,7 @@ class HydraEpisodes(Screen):
 
 	def preloadCallback(self, retval):
 		logger.info("retval: %s", retval)
-		msg = ("Preload timed out, but you can still start playback.") if not retval else ""
+		msg = _("Preload timed out, but you can still start playback.") if not retval else ""
 		self.loading.stop(msg)
 
 	def play(self):

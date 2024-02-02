@@ -33,7 +33,7 @@ def getSkinName(skin_name):
 
 
 def getScalingFactor():
-	return {"HD": 0.66, "FHD": 1, "WQHD": 1.33}[getResolution()]
+	return {"HD": 2.0 / 3.0, "FHD": 1, "WQHD": 4.0 / 3.0}[getResolution()]
 
 
 def getResolution():
@@ -52,17 +52,22 @@ def getSkinPath(file_name):
 	logger.debug(">>> file_name: %s", file_name)
 	base_skin_dir = "/usr/share/enigma2"
 	sub_skin_dir = os.path.dirname(config.skin.primary_skin.value)
-	logger.debug("sub_skin_dir: %s", sub_skin_dir)
+	resolution = getResolution()
+	logger.debug("resolution: %s, sub_skin_dir: %s", resolution, sub_skin_dir)
 	if not sub_skin_dir:
 		sub_skin_dir = "Default-HD"
-	elif sub_skin_dir == "Shadow-FHD":
-		pass
-	elif sub_skin_dir == "Zombi-Shadow-FHD":
-		sub_skin_dir = "Shadow-FHD"
-	elif sub_skin_dir == "Shadow-WQHD":
-		sub_skin_dir = "Default-WQHD"
+	elif resolution == "FHD":
+		if sub_skin_dir in ["Shadow-FHD", "Zombi-Shadow-FHD"]:
+			sub_skin_dir = "Shadow-FHD"
+		else:
+			sub_skin_dir = "Default-FHD"
+	elif resolution == "WQHD":
+		if sub_skin_dir in ["Shadow-WQHD", "Default-WQHD"]:
+			sub_skin_dir = "Default-WQHD"
+		else:
+			sub_skin_dir = "Other-WQHD"
 	else:
-		sub_skin_dir = "Default-" + getResolution()
+		sub_skin_dir = "Default-HD"
 
 	dirs = [
 		os.path.join(resolveFilename(SCOPE_PLUGINS), "Extensions", PLUGIN, "skin", sub_skin_dir),

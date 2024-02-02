@@ -1,0 +1,22 @@
+	<screen flags="wfNoBorder" name="HydraEpisodes" position="center,center" size="1600,800">
+		<xmlinc file="screenpart_TitleOnly" source="Title"/>
+		<xmlinc file="screenpart_Background"/>
+		<xmlinc file="screenpart_Loading"/>
+		<widget position="30,120" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="7" size="eval($screen_width-60),eval($screen_height-120-100)" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">
+			{
+				"template": [
+					MultiContentEntryText(pos=(10,0), size=(70,45), font=1, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=4),
+					MultiContentEntryText(pos=(90,0), size=(eval($screen_width-60-20-70-100-40),45), font=0, flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER, text=0),
+					MultiContentEntryText(pos=(eval($screen_width-60-10-120),0), size=(120,45), font=1, flags=RT_HALIGN_RIGHT | RT_VALIGN_CENTER, text=2),
+			],
+				"fonts": [
+					gFont("Regular",30),
+					gFont("Regular",25)
+				],
+				"itemHeight":45
+			}
+			</convert>
+		</widget>
+		<xmlinc file="screenpart_4Buttons_name" position="0,eval($screen_height-50)" width="eval($screen_width/4)"/>
+	</screen>

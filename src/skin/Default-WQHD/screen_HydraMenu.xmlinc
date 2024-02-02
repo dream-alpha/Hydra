@@ -1,0 +1,13 @@
+	<screen backgroundColor="background" flags="wfNoBorder" name="HydraMenu" position="center,center" size="2560,1440">
+		<xmlinc file="screenpart_TitleOnly" source="Title"/>
+		<xmlinc file="screenpart_Background"/>
+		<xmlinc file="screenpart_Loading"/>
+		<widget font="Regular;40" foregroundColor="#36B88C" halign="left" name="statusbar" position="center,40" size="587,53" transparent="1" valign="center"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/menu.svg" position="eval($screen_width-160),40" size="133,67"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/info.svg" position="eval($screen_width-253),40" size="67,67"/>
+		<widget alphatest="blend" name="vpn" position="eval($screen_width-347),40" size="67,67" zPosition="1"/>
+		<xmlinc file="screenpart_MenuList" position="40,160"/>
+		<widget font="Regular;35" foregroundColor="#1AB6CD" name="overview" position="40,1093" size="1787,247" transparent="1" valign="top"/>
+		<xmlinc file="screenpart_MenuPoster" position="eval($screen_width-680),160"/>
+		<xmlinc file="screenpart_4Buttons_name" position="0,1373" width="640"/>
+	</screen>

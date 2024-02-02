@@ -1,0 +1,9 @@
+	<screen flags="wfNoBorder" name="HydraSearch" position="center,center" size="2133,1067">
+		<xmlinc file="screenpart_TitleOnly" source="Title"/>
+		<xmlinc file="screenpart_Background"/>
+		<xmlinc file="screenpart_Loading"/>
+		<widget position="40,160" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="eval($screen_width-67),eval($screen_height-160-133)" source="menu" transparent="1">
+			<convert type="TemplatedMultiContent">{"template":[MultiContentEntryText(pos=(13,13),size=(eval($screen_width-107),53),font=0,flags=RT_HALIGN_LEFT | RT_WRAP,text=0),MultiContentEntryText(pos=(13,67),size=(eval(($screen_width-107)/5),40),font=1,flags=RT_HALIGN_LEFT,text=2),MultiContentEntryText(pos=(500,67),size=(eval(($screen_width-107)/5),40),font=1,flags=RT_HALIGN_CENTER,text=3),MultiContentEntryText(pos=(1000,67),size=(eval(($screen_width-107)/5),40),font=1,flags=RT_HALIGN_CENTER,text=4),MultiContentEntryText(pos=(1500,67),size=(eval(($screen_width-107)/5),40),font=1,flags=RT_HALIGN_RIGHT,text=5),],"fonts":[gFont("Regular",40),gFont("Regular",33)],"itemHeight":120}</convert>
+		</widget>
+		<xmlinc file="screenpart_4Buttons_name" position="0,eval($screen_height-67)" width="eval($screen_width/5)"/>
+	</screen>

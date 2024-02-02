@@ -1,8 +1,0 @@
-	<screen name="HydraEpisodes" position="center,center" size="1649,964">
-		<xmlinc file="screenpart_Loading"/>
-		<widget position="27,33" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1596,799" source="menu" transparent="1">
-			<convert type="TemplatedMultiContent">{"template":[MultiContentEntryText(pos=(13,0),size=(93,60),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=4),MultiContentEntryText(pos=(120,0),size=(1317,60),font=0,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=0),MultiContentEntryText(pos=(1436,0),size=(133,60),font=1,flags=RT_HALIGN_RIGHT|RT_VALIGN_CENTER,text=2),],"fonts":[gFont("Regular",40),gFont("Regular",33)],"itemHeight":60}</convert>
-		</widget>
-		<xmlinc file="screenpart_ColorButtons" position="27,851"/>
-		<xmlinc file="screenpart_ColorButtonsLabels" position="27,851"/>
-	</screen>

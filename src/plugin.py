@@ -33,8 +33,12 @@ from .Version import VERSION
 WHERE_SEARCH = -99
 
 
-def movieSearch(session, title, original_title, **__kwargs):
+def search(session, title, original_title, **__kwargs):
 	session.open(HydraMenu, title, original_title)
+
+
+def main(session, **__kwargs):
+	session.open(HydraMenu)
 
 
 def autoStart(reason, **kwargs):
@@ -50,10 +54,6 @@ def autoStart(reason, **kwargs):
 		logger.info("reason not handled: %s", reason)
 
 
-def main(session, **__kwargs):
-	session.open(HydraMenu)
-
-
 def Plugins(**__kwargs):
 	ConfigInit()
 	return [
@@ -67,7 +67,7 @@ def Plugins(**__kwargs):
 		PluginDescriptor(
 			name=_("Search movie"),
 			where=WHERE_SEARCH,
-			fnc=movieSearch
+			fnc=search
 		),
 		PluginDescriptor(
 			name="Hydra",

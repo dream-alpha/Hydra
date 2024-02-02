@@ -58,17 +58,14 @@ class HydraMenu(Screen):
 		Screen.__init__(self, session)
 		self.setTitle("%s - %s" % ("Hydra", _("Overview")))
 
-		self["pic_loading"] = Pixmap()
-		self["int_loading"] = Label()
-		self["msg_loading"] = Label()
-		self.loading = Loading(self["pic_loading"], self["int_loading"], self["msg_loading"], None)
+		self.loading = Loading(self, None)
 
 		self["title"] = Label()
 		self["overview"] = Label()
 		self["vote_average"] = Label()
 		self["key_red"] = Label(_("Delete"))
-		self["key_green"] = Label(_("Search torrent"))
-		self["key_yellow"] = Label(_("Update torrent"))
+		self["key_green"] = Label(_("Search"))
+		self["key_yellow"] = Label(_("Update"))
 		self["key_blue"] = Label(_("Settings"))
 		self["statusbar"] = Label()
 		self["poster"] = Pixmap()
@@ -90,9 +87,9 @@ class HydraMenu(Screen):
 			["HydraActions"],
 			{
 				"cancel": self.cancel,
-				"red": self.deleteMovie,
+				"red": self.deleteTorrent,
 				"green": self.openVirtualKeyBoard,
-				"yellow": self.updateList,
+				"yellow": self.updateTorrent,
 				"blue": self.openConfig,
 				"menu": self.openConfig,
 				"ok": self.ok,
@@ -113,7 +110,7 @@ class HydraMenu(Screen):
 	def __onLayoutFinish(self):
 		logger.info("...")
 		self.loading.start(-1, _("Loading..."))
-		threads.deferToThread(self.setupHydra, self.start)
+		threads.deferToThread(self.setup, self.start)
 
 	def __onShow(self):
 		logger.info("...")
@@ -126,7 +123,7 @@ class HydraMenu(Screen):
 	def about(self):
 		about(self.session)
 
-	def setupHydra(self, callback):
+	def setup(self, callback):
 		if config.plugins.hydra.vpn_start.value:
 			startVPN()
 		self.torrclient.start_server(config.plugins.hydra.config_path.value)
@@ -168,6 +165,7 @@ class HydraMenu(Screen):
 		self.showVPNStatus()
 
 	def createList(self, ahash=None):
+		logger.info("ahash: %s", ahash)
 		self.menu_list = []
 		self.torrclient.read_torrents()
 		for one in self.torrclient.srv_torrents:
@@ -180,20 +178,24 @@ class HydraMenu(Screen):
 					one.data.description,
 					one.data.vote_average,
 					one.data.vote_count,
-					one.data.title,
-					one.data.original_title,
+					str(one.data.title),
+					str(one.data.original_title),
 				)
 			)
-		self.menu_list.sort(key=lambda x: x[1])
+		self.menu_list.sort(key=lambda x: x[7])
 		if ahash:
 			for i, trnt in enumerate(self.menu_list):
-				# logger.debug("comparing: %s ? %s", ahash, trnt[1])
+				logger.debug("comparing: %s ? %s", ahash, trnt[1])
 				if trnt[1] == ahash:
 					self.current_index = i
 		logger.debug("current_index: %s", self.current_index)
 		self["menu"].setList(self.menu_list)
 		self.menu.setIndex(self.current_index)
-		self.showTMDBInfos()
+
+	def ok(self):
+		current = self["menu"].getCurrent()
+		if current:
+			self.session.open(HydraEpisodes, current[1])
 
 	def cancel(self):
 		if self.dt_show_tmdb_infos:
@@ -209,7 +211,7 @@ class HydraMenu(Screen):
 		current = self.menu.getCurrent()
 		logger.info("current: %s", current)
 		if current and not config.plugins.hydra.use_last_search.value:
-			text = str(current[7])
+			text = current[8] if current[8] else current[7]
 		else:
 			text = config.plugins.hydra.last_search.value
 		self.session.openWithCallback(self.searchTorrent, VirtualKeyBoard, title=_("Enter torrent to search"), text=text)
@@ -230,20 +232,19 @@ class HydraMenu(Screen):
 			self.torrclient.add_torrent(self.trnt)
 			self.getTMDBData(title)
 			threads.deferToThread(self.torrclient.get_torrent, self.trnt, self.gotTorrent)
-			self.createList(self.trnt.hash)
 		else:
 			self.createList()
 
 	def gotTorrent(self, _retval):
 		logger.info("...")
 		self.currentIndex = self.menu.getIndex()
-		self.createList()
+		self.createList(self.trnt.hash)
 
 	def getTMDBData(self, search):
 		logger.info("search: %s", search)
 		for plugin in plugins.getPlugins(where=WHERE_TMDB_INFOS):
 			logger.debug("plugin.name: %s", plugin.name)
-			if plugin.name == "TMDB":
+			if plugin.name == "TMDBCockpit":
 				plugin(search, self.gotTMDBData)
 
 	def gotTMDBData(self, res):
@@ -254,10 +255,11 @@ class HydraMenu(Screen):
 			self.trnt.data.vote_average = res["vote_average"]
 			self.trnt.data.vote_count = res["vote_count"]
 			self.trnt.data.title = res["title"]
+			self.trnt.data.original_title = res["original_title"]
 			self.torrclient.update_torrent(self.trnt)
-		self.createList()
+		self.createList(self.trnt.hash)
 
-	def deleteMovie(self):
+	def deleteTorrent(self):
 		if self["menu"].getCurrent():
 			message = _("Do you really want to delete this torrent?")
 			self.session.openWithCallback(self.removeTorrent, MessageBox, message, timeout=0, default=True)
@@ -267,20 +269,13 @@ class HydraMenu(Screen):
 			self.torrclient.remove_torrent(self.torrclient.srv_torrents[self["menu"].getCurrent()[1]])
 			self.createList()
 
-	def ok(self):
-		current = self["menu"].getCurrent()
-		if current:
-			self.session.open(HydraEpisodes, current[1])
-
-	def updateList(self):
+	def updateTorrent(self):
 		logger.info("...")
 		current = self["menu"].getCurrent()
 		if current:
 			logger.debug("title: %s", current[0])
 			self.trnt = self.torrclient.srv_torrents[current[1]]
 			self.getTMDBData(current[0])
-		else:
-			self.createList()
 
 	def showVPNStatus(self):
 		vpn_pic = "/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/vpn_inactive.png"
@@ -302,16 +297,18 @@ class HydraMenu(Screen):
 		self["stars"].hide()
 
 	def showPoster(self, url):
-		if not url:
-			path = "/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/poster_none.png"
-		else:
+		path = ""
+		if url:
 			path = os.path.join(config.plugins.hydra.poster_path.value, url.split("/")[-1])
 			if not os.path.isfile(path):
 				retval = WebRequests().downloadFile(url, path)
 				if not retval:
-					path = "/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/poster_none.png"
+					path = ""
 		logger.debug("path: %s", path)
-		self["poster"].instance.setPixmap(LoadPixmap(path))
+		if path:
+			self["poster"].instance.setPixmap(LoadPixmap(path))
+		else:
+			self["poster"].instance.setPixmap(gPixmapPtr())
 
 	def openConfig(self):
 		logger.info("...")

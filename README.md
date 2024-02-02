@@ -1,8 +1,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/495cf6fc5be8434ca7b493ff88724433)](https://www.codacy.com/gh/dream-alpha/Hydra/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dream-alpha/tmdb&amp;utm_campaign=Badge_Grade)
-
 [![Gemfury](https://badge.fury.io/fp/gemfury.svg)](https://gemfury.com/f/partner)
 
-# Hydra Torrent Player
+# Hydra Player
 DreamOS plugin
 
 ## Features

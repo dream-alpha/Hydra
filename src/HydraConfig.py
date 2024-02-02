@@ -25,7 +25,6 @@ from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, configfile, getConfigListEntry
 from Components.Label import Label
-from Components.Pixmap import Pixmap
 from Screens.Screen import Screen
 from Screens.LocationBox import LocationBox
 from .Debug import logger
@@ -48,10 +47,7 @@ class HydraConfig(ConfigListScreen, Screen):
 		self["key_blue"] = Label()
 		self.setTitle("%s - %s" % ("Hydra", _("Settings")))
 
-		self["pic_loading"] = Pixmap()
-		self["int_loading"] = Label()
-		self["msg_loading"] = Label()
-		self.loading = Loading(self["pic_loading"], self["int_loading"], self["msg_loading"], None)
+		self.loading = Loading(self, None)
 
 		self['actions'] = ActionMap(
 			["HydraActions"],
@@ -103,23 +99,19 @@ class HydraConfig(ConfigListScreen, Screen):
 		inhibitDirs = [
 			'/bin', '/boot', '/dev', '/lib', '/proc', '/run', '/sbin', '/sys', '/share'
 		]
-		try:
-			self.session.openWithCallback(
-				self.DirBrowserX,
-				LocationBox,
-				windowTitle=self['config'].getCurrent()[0],
-				text=_("Choose Directory"),
-				currDir=path,
-				bookmarks=bookmarks,
-				editDir=True,
-				inhibitDirs=inhibitDirs,
-				minFree=5
-			)
+		self.session.openWithCallback(
+			self.DirBrowserCallback,
+			LocationBox,
+			windowTitle=self['config'].getCurrent()[0],
+			text=_("Choose Directory"),
+			currDir=path,
+			bookmarks=bookmarks,
+			editDir=True,
+			inhibitDirs=inhibitDirs,
+			minFree=5
+		)
 
-		except Exception as e:
-			logger.error('Directory get failed: %s', e)
-
-	def DirBrowserX(self, path):
+	def DirBrowserCallback(self, path):
 		if path:
 			if self['config'].getCurrent() == self.config_path:
 				config.plugins.hydra.config_path.setValue(path)

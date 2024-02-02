@@ -1,7 +1,0 @@
-	<screen name="HydraConfig" position="center,center" size="818,479">
-		<xmlinc file="screenpart_Loading"/>
-		<widget font="Regular;20" foregroundColor="#4f7942" halign="left" name="statusbar" position="13,310" size="792,20" transparent="1"/>
-		<widget name="config" position="13,13" scrollbarMode="showOnDemand" size="792,330" transparent="1"/>
-		<xmlinc file="screenpart_ColorButtons" position="13,422"/>
-		<xmlinc file="screenpart_ColorButtonsLabels" position="13,422"/>
-	</screen>

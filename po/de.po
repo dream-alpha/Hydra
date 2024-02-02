@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hydra\n"
-"POT-Creation-Date: 2024-01-29 19:11+0100\n"
-"PO-Revision-Date: 2024-01-29 19:12+0100\n"
+"POT-Creation-Date: 2024-02-05 14:39+0100\n"
+"PO-Revision-Date: 2024-02-05 14:42+0100\n"
 "Last-Translator: dream-alpha\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -90,17 +90,20 @@ msgstr "Laden..."
 msgid "Preloading buffer..."
 msgstr "Buffer laden..."
 
+msgid "Preload timed out, but you can still start playback."
+msgstr "Zeitüberschreitung beim Laden des Buffers"
+
 msgid "Overview"
 msgstr "Überblick"
 
 msgid "Delete"
 msgstr "Löschen"
 
-msgid "Search torrent"
-msgstr "Torrent-Suche"
+msgid "Search"
+msgstr "Suche"
 
-msgid "Update torrent"
-msgstr "Torrent-Update"
+msgid "Update"
+msgstr "Aktualisieren"
 
 msgid "Enter torrent to search"
 msgstr "Suche für Torrent eingeben"
@@ -120,14 +123,14 @@ msgstr "Wiedergabe an letzter Position fortsetzen?"
 msgid "Add torrent"
 msgstr "Torrent-Download"
 
-msgid "Search"
-msgstr "Suche"
-
 msgid ">> Search engine"
 msgstr ">> Suchmaschine"
 
 msgid "Searching..."
 msgstr "Suche..."
+
+msgid "No torrents found."
+msgstr "Keine Suchergebnisse vorhanden."
 
 msgid "not installed"
 msgstr "nicht installiert"
@@ -164,3 +167,15 @@ msgstr "Filmsuche"
 
 msgid "Hydra Player"
 msgstr "Hydra Player"
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Copyright"
+msgstr "Copyright"
+
+msgid "License"
+msgstr "Lizenz"

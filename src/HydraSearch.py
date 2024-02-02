@@ -26,7 +26,6 @@ from twisted.internet import threads, reactor
 from Components.ActionMap import ActionMap
 from Components.config import config
 from Components.Label import Label
-from Components.Pixmap import Pixmap
 from Components.Sources.List import List
 from Screens.Screen import Screen
 from .Debug import logger
@@ -51,10 +50,7 @@ class HydraSearch(Screen):
 		self["key_yellow"] = Label(_("Search"))
 		self["key_blue"] = Label(_(">> Search engine"))
 
-		self["pic_loading"] = Pixmap()
-		self["int_loading"] = Label()
-		self["msg_loading"] = Label()
-		self.loading = Loading(self["pic_loading"], self["int_loading"], self["msg_loading"], None)
+		self.loading = Loading(self, None)
 
 		self.thread = None
 		self.s_obj = None
@@ -64,7 +60,6 @@ class HydraSearch(Screen):
 			["HydraActions"],
 			{
 				"cancel": self.cancel,
-				"back": self.cancel,
 				"red": self.cancel,
 				"green": self.ok,
 				"yellow": self.__onLayoutFinish,
@@ -84,7 +79,6 @@ class HydraSearch(Screen):
 
 	def __onLayoutFinish(self):
 		menu_list = []
-		menu_list.append(("", "", "", "", "", ""))
 		self["menu"].setList(menu_list)
 		DelayTimer(50, self.searchSetup, self.search_topic)
 
@@ -169,29 +163,28 @@ class HydraSearch(Screen):
 					)
 				)
 		else:
-			menu_list.append(("", "", "", "", "", ""))
+			menu_list.append((_("No torrents found."), "", "", "", "", ""))
 		self["menu"].setList(menu_list)
 
 	def toggleSearchEngine(self):
 		logger.info("...")
 		self.search_engine = next_search_engine(self.search_engine)
-		self.__setTitle(self.search_topic, self.search_engine)
-		menu_list = [("", "", "", "", "", "")]
-		self["menu"].setList(menu_list)
-
-	def cancel(self):
 		config.plugins.hydra.search_engine.value = self.search_engine
 		config.plugins.hydra.search_engine.save()
+		self.__setTitle(self.search_topic, self.search_engine)
+		self.menu_list = []
+		self["menu"].setList(self.menu_list)
+
+	def cancel(self):
 		if self.thread:
 			self.thread.cancel()
 		self.close()
 
 	def ok(self):
-		config.plugins.hydra.search_engine.value = self.search_engine
-		config.plugins.hydra.search_engine.save()
-		if self["menu"] and not self["menu"].getCurrent()[1]:
-			self.close()
-		else:
-			name = self["menu"].getCurrent()[0]
-			magnet = self["menu"].getCurrent()[1]
+		current = self["menu"].getCurrent()
+		if current and current[1]:
+			name = current[0]
+			magnet = current[1]
 			self.close(name, magnet)
+		else:
+			self.close()

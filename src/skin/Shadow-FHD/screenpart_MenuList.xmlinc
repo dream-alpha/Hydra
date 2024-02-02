@@ -1,0 +1,14 @@
+	<widget position="0,0" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="7" size="1340,680" source="menu" transparent="1">
+		<convert type="TemplatedMultiContent">
+	{
+		"template":
+			[
+				MultiContentEntryText(pos=(10,5), size=(1340,45), font=0, flags=RT_HALIGN_LEFT, text=7),
+				MultiContentEntryText(pos=(10,45), size=(1100,40), font=1, flags=RT_HALIGN_LEFT, text=0),
+				MultiContentEntryText(pos=(1120,45), size=(200,40), font=1, flags=RT_HALIGN_RIGHT, text=2)
+			],
+		"fonts": [gFont("Regular",30), gFont("Regular",25)],
+		"itemHeight":85
+	}
+	</convert>
+	</widget>

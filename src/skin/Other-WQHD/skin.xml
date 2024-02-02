@@ -3,7 +3,7 @@
 	<screen name="HydraMenu" position="center,147" size="2400,1240">
 		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
 		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="107,107" transparent="1" valign="center" zPosition="4"/>
-		<widget font="Regular;53" halign="center" name="msg_loading" position="center,680" size="2400,107" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,493" size="2400,107" transparent="1" valign="center" zPosition="4"/>
 		<widget font="Regular;53" foregroundColor="#FFF554" halign="center" name="title" position="40,20" size="2320,60" transparent="1"/>
 		<widget font="Regular;36" foregroundColor="white" name="vote_average" position="400,760" size="667,48" transparent="1" valign="center"/>
 		<widget alphatest="blend" name="poster" position="40,120" size="400,600" zPosition="2"/>
@@ -29,7 +29,7 @@
 	<screen name="HydraConfig" position="center,center" size="1653,967">
 		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
 		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="107,107" transparent="1" valign="center" zPosition="4"/>
-		<widget font="Regular;53" halign="center" name="msg_loading" position="center,547" size="1600,107" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,402" size="1653,107" transparent="1" valign="center" zPosition="4"/>
 		<widget font="Regular;40" foregroundColor="#4f7942" halign="left" name="statusbar" position="27,627" size="1600,40" transparent="1"/>
 		<widget name="config" position="27,27" scrollbarMode="showOnDemand" size="1600,667" transparent="1"/>
 		<ePixmap pixmap="Default-FHD/skin_default/buttons/red.svg" position="27,853" size="400,93"/>
@@ -44,7 +44,7 @@
 	<screen name="HydraEpisodes" position="center,center" size="1653,967">
 		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
 		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="107,107" transparent="1" valign="center" zPosition="4"/>
-		<widget font="Regular;53" halign="center" name="msg_loading" position="center,547" size="1600,107" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,402" size="1653,107" transparent="1" valign="center" zPosition="4"/>
 		<widget position="27,33" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1600,800" source="menu" transparent="1">
 			<convert type="TemplatedMultiContent">{"template":[MultiContentEntryText(pos=(13,0),size=(93,60),font=1,flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER,text=4),MultiContentEntryText(pos=(120,0),size=(1320,60),font=0,flags=RT_HALIGN_LEFT | RT_VALIGN_CENTER,text=0),MultiContentEntryText(pos=(1440,0),size=(133,60),font=1,flags=RT_HALIGN_RIGHT | RT_VALIGN_CENTER,text=2),],"fonts":[gFont("Regular",40),gFont("Regular",33)],"itemHeight":60}</convert>
 		</widget>
@@ -60,7 +60,7 @@
 	<screen name="HydraSearch" position="center,center" size="1653,967">
 		<widget alphatest="blend" name="pic_loading" position="center,center" size="133,133" zPosition="3"/>
 		<widget font="Regular;53" halign="center" name="int_loading" position="center,center" size="107,107" transparent="1" valign="center" zPosition="4"/>
-		<widget font="Regular;53" halign="center" name="msg_loading" position="center,547" size="1600,107" transparent="1" valign="center" zPosition="4"/>
+		<widget font="Regular;53" halign="center" name="msg_loading" position="center,402" size="1653,107" transparent="1" valign="center" zPosition="4"/>
 		<widget position="27,13" render="Listbox" scrollbarMode="showOnDemand" scrollbarWidth="9" size="1600,840" source="menu" transparent="1">
 			<convert type="TemplatedMultiContent">{"template":[MultiContentEntryText(pos=(13,13),size=(1573,53),font=0,flags=RT_HALIGN_LEFT | RT_WRAP,text=0),MultiContentEntryText(pos=(120,67),size=(353,40),font=1,flags=RT_HALIGN_LEFT,text=2),MultiContentEntryText(pos=(473,67),size=(353,40),font=1,flags=RT_HALIGN_CENTER,text=3),MultiContentEntryText(pos=(853,67),size=(353,40),font=1,flags=RT_HALIGN_RIGHT,text=4),MultiContentEntryText(pos=(1220,67),size=(353,40),font=1,flags=RT_HALIGN_RIGHT,text=5),],"fonts":[gFont("Regular",40),gFont("Regular",33)],"itemHeight":120}</convert>
 		</widget>

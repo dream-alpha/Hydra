@@ -1,7 +1,5 @@
 	<screen name="HydraMenu" position="center,110" size="1800,930">
-		<widget alphatest="blend" name="pic_loading" position="center,center" size="100,100" zPosition="3"/>
-		<widget font="Regular;40" halign="center" name="int_loading" position="center,center" size="80,80" transparent="1" valign="center" zPosition="4"/>
-		<widget font="Regular;40" halign="center" name="msg_loading" position="center,510" size="1800,80" transparent="1" valign="center" zPosition="4"/>
+		<xmlinc file="screenpart_Loading"/>
 		<widget font="Regular;40" foregroundColor="#FFF554" halign="center" name="title" position="30,15" size="1740,45" transparent="1"/>
 		<widget font="Regular;27" foregroundColor="white" name="vote_average" position="300,570" size="500,36" transparent="1" valign="center"/>
 		<widget alphatest="blend" name="poster" position="30,90" size="300,450" zPosition="2"/>

@@ -1,0 +1,4 @@
+	<widget alphatest="blend" name="poster" position="0,0" size="600,900" zPosition="2"/>
+	<widget alphatest="blend" name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_empty.png" position="0,1013" size="280,28" transparent="1" zPosition="2"/>
+	<widget name="stars" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/Hydra/skin/images/starsbar_filled.png" position="0,1013" size="280,28" transparent="1" zPosition="3"/>
+	<widget font="Regular;36" foregroundColor="white" name="vote_average" position="0,1067" size="600,48" transparent="1" valign="center"/>

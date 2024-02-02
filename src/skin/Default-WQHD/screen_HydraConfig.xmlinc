@@ -1,0 +1,8 @@
+	<screen flags="wfNoBorder" name="HydraConfig" position="center,center" size="1600,1067">
+		<xmlinc file="screenpart_TitleOnly" source="Title"/>
+		<xmlinc file="screenpart_Background"/>
+		<xmlinc file="screenpart_Loading"/>
+		<widget name="config" position="40,160" scrollbarMode="showOnDemand" size="eval($screen_width-80),eval($screen_height-160-293)" transparent="1"/>
+		<widget font="Regular;40" foregroundColor="#4f7942" halign="left" name="statusbar" position="40,eval($screen_height-133-53)" size="eval($screen_width-80),53" transparent="1"/>
+		<xmlinc file="screenpart_4Buttons_name" position="0,eval($screen_height-67)" width="eval($screen_width/5)"/>
+	</screen>
