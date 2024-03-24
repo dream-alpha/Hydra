@@ -1,6 +1,6 @@
 Description: Hydra
 Maintainer: dream-alpha
 Package: enigma2-plugin-extensions-hydra
-Version: 4.2.6
+Version: 4.3.0
 Architecture: all
 Depends: python-requests, python-beautifulsoup4
